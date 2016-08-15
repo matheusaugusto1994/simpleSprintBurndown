@@ -1,0 +1,24 @@
+server:
+   port: 8081
+   
+spring:
+    profiles: local
+    jpa:
+        database: MYSQL
+        show-sql: true
+        hibernate:
+            ddl-auto: validate
+
+    datasource:
+        url: jdbc:mysql://localhost/simple_burndown?createDatabaseIfNotExist=true
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+        max-active: 10
+        max-idle: 5
+        min-idle: 1
+        test-while-idle: true
+        test-on-borrow: true
+        validation-query: SELECT 1
+        time-between-eviction-runs-millis: 5000
+        min-evictable-idle-time-millis: 60000  
