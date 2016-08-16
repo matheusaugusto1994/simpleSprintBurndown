@@ -19,20 +19,20 @@
 		    $('#container').highcharts({
 		        credits: {
 		      		enabled: false
-		  		},
-	  			xAxis: {
-		            min: 0,
-		            max: 10,
-		            title: {
-		                text: 'Days'
-	            	}
-		        },
+		  			},
 		        exporting: { 
 		        	enabled: false 
 		        },
+	  			xAxis: {
+		            min: 0,
+		            tickPositions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+		            title: {
+		                text: 'Days'
+		            }
+		        },
 		        yAxis: {
 		            min: 0,
-		            max: 5,
+		            tickPositions: [0, 1, 2, 3, 4, 5],
 		            title: {
 		                text: 'Tasks'
 		            }
@@ -57,10 +57,25 @@
 		        
 		        {
 		            type: 'line',
+		            name: 'Tasks per day - Front',
+		            data: [[0, 4], [1, 3.6], [2, 3.2], [3, 2.8], [4, 2.4], [5, 2.0], [6, 1.6], [7, 1.2], [8, 0.8], [9, 0.4], [10, 0]],           
+		            marker: {
+		                enabled: true
+		            },
+		            states: {
+		                hover: {
+		                    lineWidth: 0
+		                }
+		            },
+		            enableMouseTracking: false
+		        },
+		        
+		        {
+		            type: 'line',
 		            name: 'Dead tasks',
 		            data: [5, 3, 4, 1, 2, 2],
 		            marker: {
-		                radius: 5
+		                enabled: false
 		            }
 		        },
 		        
@@ -69,7 +84,7 @@
 		            name: 'Unplanned tasks',
 		            data: [2, 2],
 		            marker: {
-		                radius: 5
+		                enabled: false
 		            }
 		        }
 		        ]
