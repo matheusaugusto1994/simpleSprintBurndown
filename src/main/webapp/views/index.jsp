@@ -7,11 +7,47 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
     
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    
     <script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 </head>
-<body >
-	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<body>
+	<form id="frmSend">
+		<div class="row" style="margin: 0px; margin-top: 50px;">
+			<div class="col-md-12">
+				<div class="col-md-3"></div>
+					<div align="center" class="col-md-6 panel panel-default panel-body">
+						<div class="col-md-5">
+							<label for="day">Day: </label>
+							<input type="date" id="day" class="form-control" style="text-align: center;">
+						</div>
+						<div class="col-md-5">
+							<label for="dead-tasks">Dead tasks: </label>
+							<input type="number" id="dead-tasks" class="form-control" style="text-align: center;">
+						</div>
+						<div class="col-md-2">
+							<br>
+							<input type="submit" id="btnSend" class="btn btn-primary" title="Send">
+						</div>
+					</div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+	</form>
+	
+	<div class="row" style="margin: 0px">
+		<div class="col-md-12">&nbsp;</div>
+	</div>
+	
+	<div class="row" style="margin: 0px">
+		<div class="col-md-12">
+			<div class="col-md-2"></div>
+			<div id="container" class="col-md-8" style="margin: 0 auto"></div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
 </body>	
 
 	<script>
