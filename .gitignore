@@ -1,1 +1,13 @@
-/target/
+/bin
+/target
+*.component
+*.prefs
+*.component
+*.classpath
+.classpath
+/.settings
+.metadata
+.project
+/WebContent
+/build
+/target
