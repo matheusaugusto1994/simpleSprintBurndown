@@ -12,7 +12,7 @@ public class ConfigUrlMapping {
 	public InternalResourceViewResolver resolver(){
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/views/");
-		resolver.setSuffix(".jsp");
+		resolver.setSuffix(".html");
 		resolver.setViewClass(JstlView.class);
 		return resolver;
 	}

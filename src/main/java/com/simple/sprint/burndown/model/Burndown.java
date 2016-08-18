@@ -1,5 +1,6 @@
 package com.simple.sprint.burndown.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,12 +11,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Burndown {
 
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	private String name;
+	
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
+	private Date start;
+	
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
+	private Date end;
 	
 	@Column(name="number_days")
 	private Integer numberDays;
@@ -35,6 +46,30 @@ public class Burndown {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public Date getStart() {
+		return start;
+	}
+
+	public void setStart(Date start) {
+		this.start = start;
+	}
+
+	public Date getEnd() {
+		return end;
+	}
+
+	public void setEnd(Date end) {
+		this.end = end;
 	}
 
 	public Integer getNumberDays() {
@@ -60,6 +95,6 @@ public class Burndown {
 	public void setTasksdays(List<TasksDay> tasksdays) {
 		this.tasksdays = tasksdays;
 	}
-	
+
 	
 }

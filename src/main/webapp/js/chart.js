@@ -100,15 +100,6 @@ var ChartForm = (function(){
 				form.renderChart(burndown);
 			}
 		});
-		
-//		$.post('/chart/send', tasksday)
-//		.fail(function(messages) {
-//			alert('fail');
-//		})
-//		.done(function(data) {
-//			burndown = data;
-//			form.renderChart(burndown);
-//		});
 	};
 	
 	form.iterateNumber = function(number, initialIndex){
