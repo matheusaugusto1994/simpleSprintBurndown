@@ -1,6 +1,7 @@
 package com.simple.sprint.burndown.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,14 +19,14 @@ public class ChartController{
 	@Autowired
 	private BurndownService burndownService;
 
-	@RequestMapping(value="/chart", method={RequestMethod.GET})
-	public ModelAndView init(){
+	@RequestMapping(value="/chart/{id}", method={RequestMethod.GET})
+	public ModelAndView init(@PathVariable Long id){
 		return new ModelAndView("chart");
 	}
 
-	@RequestMapping(value="/chart/load", method={RequestMethod.GET})
-	public @ResponseBody Burndown load(){
-		return burndownService.getBurndownById(1L);
+	@RequestMapping(value="/chart/load/{id}", method={RequestMethod.GET})
+	public @ResponseBody Burndown load(@PathVariable Long id){
+		return burndownService.getBurndownById(id);
 	}
 
 	@RequestMapping(value="/chart/send", method={RequestMethod.POST})

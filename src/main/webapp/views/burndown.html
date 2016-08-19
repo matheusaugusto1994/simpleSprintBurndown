@@ -19,7 +19,59 @@
 				<div class="row">&nbsp;</div>
 				<div class="row">&nbsp;</div>
 				<div class="row">&nbsp;</div>
+
+				<div class="row">
+					<div class="col-md-10"></div>
+					<div class="col-md-2" align="right" style="padding: 0px">
+						<button class='btn btn-primary' id='bt-new-burndown'><i class='glyphicon glyphicon-plus'></i> New burndown</button>
+					</div>
+				</div>
+
+				<div class="row">&nbsp;</div>
 				
+				<div class="row">
+					<div id="form-burndown" style="display: none;">
+						<form id="form-fields" action="" class="validate">
+		                    <div class="panel panel-default">
+		                        <div class="panel-heading"><h6 class="panel-title"><i class="icon-pagebreak"></i> Burndown</h6></div>
+		                        <div class="panel-body">
+		                            <div class="form-group">
+		                                <div class="row">
+		                                    <div class="col-md-3">
+		                                        <label>Name <span style="color:#F00;">*</span></label>
+		                                        <input type="text" class="form-control required" id="name" name="name" maxlength="100">
+		                                    </div>
+		                                    <div class="col-md-3">
+		                                        <label>Start <span style="color:#F00;">*</span></label>
+		                                        <input type="date" class="form-control required" id="start" name="start" maxlength="100">
+		                                    </div>
+		                                    <div class="col-md-3">
+		                                        <label>End <span style="color:#F00;">*</span></label>
+		                                        <input type="date" class="form-control required" id="end" name="end" maxlength="100">
+		                                    </div>
+		                                    <div class="col-md-3">
+		                                        <label>Total tasks <span style="color:#F00;">*</span></label>
+		                                        <span id='span-keep-tasks' style="display: none; right: 16px; position: absolute">keep existing tasks <input type="checkbox" id='keep-tasks' checked></span>
+		                                        <input type="number" class="form-control required" id="numberTasks" name="numberTasks" maxlength="100">
+		                                    </div>
+		        						</div>
+		        						
+		        						<div class="row">&nbsp;</div>
+		        						
+		        						<div class="row">
+		                                    <div class="col-md-9"></div>
+		                                    <div class="col-md-3" align="right">
+		                                        <a class='btn' id='bt-cancel'>Cancel</a>
+		                                        <input type="submit" class='btn btn-primary' value="Save">
+		                                    </div>
+		                                    
+		        						</div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </form>
+					</div>
+				</div>
 				<div class="row">
 					<div class="panel panel-default">
 						<div class="panel-heading"><h6 class="panel-title">List of dashboards</h6></div>
@@ -34,6 +86,9 @@
 								</tr>
 							</thead>
 						</table>
+					</div>
+					<div style="margin: 0px; padding: 0px">
+						<h6>**Click into element of list to use burndown.</h6>
 					</div>
 				</div>
 			</div>

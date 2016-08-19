@@ -2,7 +2,8 @@ var ChartForm = (function(){
 	
 	var form            = {},
 		chart           = {},
-		burndown        = {};
+		burndown        = {},
+		burndownId      = {};
 	
 	form.init = function() {
 		form.load();
@@ -69,7 +70,9 @@ var ChartForm = (function(){
 	};
 	
 	form.load = function() {
-		$.get('/chart/load')
+		burndownId = form.getBurndownId();
+		
+		$.get('/chart/load/' + burndownId)
 		.fail(function(messages) {
 			alert('fail');
 		})
@@ -78,6 +81,11 @@ var ChartForm = (function(){
 			form.renderChart(burndown);
 		});
 	};
+	
+	form.getBurndownId = function(){
+		var url = document.URL.split('/');
+		return url[url.length -1];
+	}
 	
 	form.submit = function(e) {
 		e.preventDefault();
