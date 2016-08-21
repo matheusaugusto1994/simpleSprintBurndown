@@ -23,7 +23,7 @@ var BurndownForm = (function(){
 	form.renderTable = function(list){
 		var tbody = document.createElement("tbody");
 		for (var i = 0; i < list.length; i++) {
-			var tr = document.createElement('tr', undefined, 'tr-burndown');
+			var tr = form.createElement('tr', undefined, 'tr-burndown');
 			tr.dataset.id = list[i].id;
 			
 			tr.appendChild(form.createTd(list[i].name));
@@ -109,7 +109,7 @@ var BurndownForm = (function(){
 		event.stopPropagation();
 	}
 
-	form.updateBurndown = function(){
+	form.updateBurndown = function(event){
 		event.stopPropagation();
 	}
 
